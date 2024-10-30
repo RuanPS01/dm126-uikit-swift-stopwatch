@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GQw-Bn-QMq">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DM126_Class" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Guk-AR-lJL">
+                                <rect key="frame" x="115" y="442" width="200" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="1tA-uI-fOQ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Run" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                    <color key="baseForegroundColor" red="0.062745101750000004" green="0.20392158630000001" blue="0.21568629149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onClickStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kd5-Vq-VMH"/>
+                                    <segue destination="g1v-YD-dcQ" kind="show" id="VF8-Rx-akL"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopwatchLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="aLr-vq-P3R">
+                                <rect key="frame" x="40" y="232" width="350" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="28X-JJ-Pg5"/>
+                                    <constraint firstAttribute="width" constant="350" id="BxQ-t0-NtD"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.062745101749897003" green="0.20392158627510071" blue="0.21568629145622253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" systemColor="systemMintColor"/>
+                        <constraints>
+                            <constraint firstItem="Guk-AR-lJL" firstAttribute="top" secondItem="aLr-vq-P3R" secondAttribute="bottom" constant="10" id="PmY-R8-TqX"/>
+                            <constraint firstItem="aLr-vq-P3R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WhE-4u-UUR"/>
+                            <constraint firstItem="Guk-AR-lJL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XSb-vh-gr5"/>
+                            <constraint firstItem="Guk-AR-lJL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="foX-79-3nI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gdd-Xy-E3f"/>
+                    <connections>
+                        <outlet property="startTestButton" destination="Guk-AR-lJL" id="IRN-gZ-61e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="918.1395348837209" y="4.5064377682403434"/>
+        </scene>
+        <!--Timer View Controller-->
+        <scene sceneID="mlL-fP-rDe">
+            <objects>
+                <viewController id="g1v-YD-dcQ" userLabel="Timer View Controller" customClass="TimerViewController" customModule="DM126_Class" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XWl-pT-Mwy">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4a-Bz-pUw">
+                                <rect key="frame" x="81.333333333333343" y="430.33333333333331" width="267.33333333333326" height="71.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                                <color key="textColor" systemColor="systemMintColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3tf-yw-FAK">
+                                <rect key="frame" x="30" y="532" width="370" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxy-cH-7tA">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Pausar" cornerStyle="capsule">
+                                            <color key="baseForegroundColor" red="0.062745101750000004" green="0.20392158630000001" blue="0.21568629149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="playPauseAction:" destination="g1v-YD-dcQ" eventType="touchUpInside" id="lsK-eO-N7C"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efr-sP-EEB">
+                                        <rect key="frame" x="190" y="0.0" width="180" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Parar" cornerStyle="capsule">
+                                            <color key="baseBackgroundColor" white="0.40999999999999998" alpha="1" colorSpace="calibratedWhite"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="stopAction:" destination="g1v-YD-dcQ" eventType="touchUpInside" id="tbO-C8-ihu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1db-zX-CNi"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="top" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="119-6g-Tar">
+                                <rect key="frame" x="0.0" y="619" width="430" height="279"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="S4X-VE-ZJx"/>
+                        <color key="backgroundColor" red="0.062745101750000004" green="0.20392158630000001" blue="0.21568629149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="S4X-VE-ZJx" firstAttribute="trailing" secondItem="119-6g-Tar" secondAttribute="trailing" id="3rU-8G-FgO"/>
+                            <constraint firstItem="S4X-VE-ZJx" firstAttribute="trailing" secondItem="3tf-yw-FAK" secondAttribute="trailing" constant="30" id="4re-Sm-cYN"/>
+                            <constraint firstItem="3tf-yw-FAK" firstAttribute="leading" secondItem="S4X-VE-ZJx" secondAttribute="leading" constant="30" id="9SG-LT-uEx"/>
+                            <constraint firstItem="c4a-Bz-pUw" firstAttribute="centerY" secondItem="XWl-pT-Mwy" secondAttribute="centerY" id="Act-n9-ldS"/>
+                            <constraint firstItem="3tf-yw-FAK" firstAttribute="top" secondItem="c4a-Bz-pUw" secondAttribute="bottom" constant="30" id="Hi8-kp-gNo"/>
+                            <constraint firstItem="c4a-Bz-pUw" firstAttribute="centerX" secondItem="XWl-pT-Mwy" secondAttribute="centerX" id="Kp1-Kc-bPq"/>
+                            <constraint firstItem="119-6g-Tar" firstAttribute="leading" secondItem="S4X-VE-ZJx" secondAttribute="leading" id="Nri-Cb-h8m"/>
+                            <constraint firstItem="S4X-VE-ZJx" firstAttribute="bottom" secondItem="119-6g-Tar" secondAttribute="bottom" id="f21-zh-otS"/>
+                            <constraint firstItem="119-6g-Tar" firstAttribute="top" secondItem="3tf-yw-FAK" secondAttribute="bottom" constant="37" id="v4w-A2-VrI"/>
+                            <constraint firstItem="3tf-yw-FAK" firstAttribute="centerX" secondItem="XWl-pT-Mwy" secondAttribute="centerX" id="ziY-yN-7mQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="U6n-rg-7dw"/>
+                    <connections>
+                        <outlet property="playPauseOutlet" destination="zxy-cH-7tA" id="Zak-mg-3rz"/>
+                        <outlet property="stackViewListLaps" destination="119-6g-Tar" id="TF7-c9-t4c"/>
+                        <outlet property="stopOutlet" destination="efr-sP-EEB" id="GIB-hP-BC7"/>
+                        <outlet property="timerLabel" destination="c4a-Bz-pUw" id="L69-s6-gZy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0fz-Ff-hRP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1783.2558139534883" y="4.5064377682403434"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ezK-GR-1hK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GQw-Bn-QMq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9ug-FG-SuS">
+                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="v0z-RF-KEB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkC-Ev-PvT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="19.534883720930232" y="4.5064377682403434"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" systemColor="systemMintColor"/>
+    <resources>
+        <image name="StopwatchLogoWhite" width="1920" height="1080"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
